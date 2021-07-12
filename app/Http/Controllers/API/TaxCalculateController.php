@@ -30,6 +30,11 @@ class TaxCalculateController extends Controller
     "total_invest": 0
      */
 
+    public function index()
+    {
+        return view('tax-calculate');
+    }
+
     public function calculate(Request $request)
     {
         // TODO need to about provident fund

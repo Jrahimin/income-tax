@@ -15,7 +15,7 @@ function TaxForm() {
     }
     return (
         <div className="card">
-            <div className="card-header text-center bg-info">Calculate your TAX</div>
+            <div className="card-header text-center bg-info">Calculate Income TAX</div>
             <div className="card-body">
                 <Form onSubmit={submit}>
                     <Row>
@@ -34,50 +34,58 @@ function TaxForm() {
                     </Row>
                     <Row>
                         <Col>
-                            <Group controlId="gender">
-                                <Label>Password</Label>
-                                <Control as="select" name="gender">
-                                    <option value="">Select Gender</option>
-                                    <option value="0">Male</option>
-                                    <option value="1">Female</option>
-                                    <option value="2">Female</option>
-                                </Control>
-                            </Group>
-                        </Col>
-                        <Col>
                             <Group controlId="age">
                                 <Label>Age</Label>
                                 <Control type="text" placeholder="Enter age" name="age"/>
                             </Group>
                         </Col>
+                        <Col>
+                            <Form.Check inline label="Male" name="gender" type="radio" value="m" defaultChecked={true}/>
+                            <Form.Check inline label="Female" name="gender" type="radio" value="f"/>
+                        </Col>
                     </Row>
                     <Row>
                         <Col>
+                            <Group controlId="year_basic">
+                                <Label>Yearly Basic Salary</Label>
+                                <Control type="text" placeholder="Year Basic" name="year_basic"/>
+                            </Group>
+                        </Col>
+                        <Col>
                             <Group controlId="year_transport">
-                                <Label>Year Transport</Label>
+                                <Label>Yearly Transport Allowance</Label>
                                 <Control type="text" placeholder="Year Transport" name="year_transport"/>
                             </Group>
                         </Col>
+                    </Row>
+                    <Row>
                         <Col>
-                            <Group controlId="total_invest">
-                                <Label>Total Invest</Label>
-                                <Control type="text" placeholder="Total Invest" name="total_invest"/>
+                            <Group controlId="year_medical">
+                                <Label>Yearly Medical Allowance</Label>
+                                <Control type="text" placeholder="Year Medical" name="year_medical"/>
+                            </Group>
+                        </Col>
+                        <Col>
+                            <Group controlId="year_house_rent">
+                                <Label>Yearly House Rent Allowance</Label>
+                                <Control type="text" placeholder="year_house_rent" name="year_house_rent"/>
                             </Group>
                         </Col>
                     </Row>
                     <Row>
+                        <Col>
+                            <Group controlId="total_invest">
+                                <Label>Tax Rebatable Investment</Label>
+                                <Control type="text" placeholder="Total Invest" name="total_invest"/>
+                            </Group>
+                        </Col>
                         <Col>
                             <Group controlId="bar_taken">
                                 <Label>Bar Taken</Label>
                                 <Control type="text" placeholder="Bar Taken" name="bar_taken"/>
                             </Group>
                         </Col>
-                        <Col>
-                            <Group controlId="year_basic">
-                                <Label>Year Basic</Label>
-                                <Control type="text" placeholder="Year Basic" name="year_basic"/>
-                            </Group>
-                        </Col>
+
                     </Row>
                     <Row>
                         <Col>
@@ -90,20 +98,6 @@ function TaxForm() {
                             <Group controlId="extra_income">
                                 <Label>Extra Income</Label>
                                 <Control type="text" placeholder="Extra Income" name="extra_income"/>
-                            </Group>
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col>
-                            <Group controlId="year_house_rent">
-                                <Label>Year House Rent</Label>
-                                <Control type="text" placeholder="year_house_rent" name="year_house_rent"/>
-                            </Group>
-                        </Col>
-                        <Col>
-                            <Group controlId="year_medical">
-                                <Label>Year Medical</Label>
-                                <Control type="text" placeholder="Year Medical" name="year_medical"/>
                             </Group>
                         </Col>
                     </Row>
