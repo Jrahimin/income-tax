@@ -1,16 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import TaxForm from "./tax-form";
+import {Col, Container, Row} from "react-bootstrap";
 
 function Index() {
     return (
-        <div className="container">
-            <div className="row justify-content-center">
-                <div className="col-md-8">
-                    <TaxForm></TaxForm>
-                </div>
-            </div>
-        </div>
+        <Container>
+            <Row>
+                <Col md={{ span: 8, offset: 2 }}>
+                    <TaxForm/>
+                </Col>
+            </Row>
+        </Container>
     );
 }
 
