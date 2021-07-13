@@ -132,7 +132,7 @@ class TaxCalculateController extends Controller
             $amount = 350000;
         }
 
-        if(!$request->bar_taken && $request->has_disabled_child){
+        if($request->has_disabled_child){
             $amount += 25000;
         }
 

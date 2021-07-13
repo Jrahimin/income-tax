@@ -5599,7 +5599,7 @@ function TaxForm() {
                 children: "Yearly Basic Salary"
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(Control, {
                 type: "text",
-                placeholder: "Year Basic",
+                placeholder: "Yearly Basic Salary",
                 name: "year_basic"
               })]
             })
@@ -5610,7 +5610,7 @@ function TaxForm() {
                 children: "Yearly Transport Allowance"
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(Control, {
                 type: "text",
-                placeholder: "Year Transport",
+                placeholder: "Yearly Transport Allowance",
                 name: "year_transport"
               })]
             })
@@ -5623,7 +5623,7 @@ function TaxForm() {
                 children: "Yearly Medical Allowance"
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(Control, {
                 type: "text",
-                placeholder: "Year Medical",
+                placeholder: "Yearly Medical Allowance",
                 name: "year_medical"
               })]
             })
@@ -5634,7 +5634,7 @@ function TaxForm() {
                 children: "Yearly House Rent Allowance"
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(Control, {
                 type: "text",
-                placeholder: "year_house_rent",
+                placeholder: "Yearly House Rent Allowance",
                 name: "year_house_rent"
               })]
             })
@@ -5644,10 +5644,10 @@ function TaxForm() {
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(Group, {
               controlId: "year_bonus",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(Label, {
-                children: "Year Bonus"
+                children: "Yearly Bonus"
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(Control, {
                 type: "text",
-                placeholder: "Year Bonus",
+                placeholder: "Yearly Bonus",
                 name: "year_bonus"
               })]
             })
@@ -5655,10 +5655,10 @@ function TaxForm() {
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(Group, {
               controlId: "extra_income",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(Label, {
-                children: "Extra Income"
+                children: "Other Income"
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(Control, {
                 type: "text",
-                placeholder: "Extra Income",
+                placeholder: "Other Income",
                 name: "extra_income"
               })]
             })
@@ -5677,14 +5677,14 @@ function TaxForm() {
             })
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h4", {
-          children: "Other Eligibility"
+          children: "Other Eligibilities"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("hr", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__.default, {
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__.default, {
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(Group, {
               controlId: "attain_transport",
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(Check, {
                 type: "switch",
-                label: "Attain Transport"
+                label: "Workplace Provides Transport"
               })
             })
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__.default, {
@@ -5692,7 +5692,7 @@ function TaxForm() {
               controlId: "in_city",
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(Check, {
                 type: "switch",
-                label: "In City"
+                label: "Resides in City"
               })
             })
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__.default, {
@@ -5700,7 +5700,7 @@ function TaxForm() {
               controlId: "ctg_or_dhaka",
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(Check, {
                 type: "switch",
-                label: "CTG or Dhaka"
+                label: "Resides in CTG or Dhaka"
               })
             })
           })]

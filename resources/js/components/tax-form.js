@@ -70,13 +70,13 @@ function TaxForm() {
                         <Col>
                             <Group controlId="year_basic">
                                 <Label>Yearly Basic Salary</Label>
-                                <Control type="text" placeholder="Year Basic" name="year_basic"/>
+                                <Control type="text" placeholder="Yearly Basic Salary" name="year_basic"/>
                             </Group>
                         </Col>
                         <Col>
                             <Group controlId="year_transport">
                                 <Label>Yearly Transport Allowance</Label>
-                                <Control type="text" placeholder="Year Transport" name="year_transport"/>
+                                <Control type="text" placeholder="Yearly Transport Allowance" name="year_transport"/>
                             </Group>
                         </Col>
                     </Row>
@@ -84,27 +84,27 @@ function TaxForm() {
                         <Col>
                             <Group controlId="year_medical">
                                 <Label>Yearly Medical Allowance</Label>
-                                <Control type="text" placeholder="Year Medical" name="year_medical"/>
+                                <Control type="text" placeholder="Yearly Medical Allowance" name="year_medical"/>
                             </Group>
                         </Col>
                         <Col>
                             <Group controlId="year_house_rent">
                                 <Label>Yearly House Rent Allowance</Label>
-                                <Control type="text" placeholder="year_house_rent" name="year_house_rent"/>
+                                <Control type="text" placeholder="Yearly House Rent Allowance" name="year_house_rent"/>
                             </Group>
                         </Col>
                     </Row>
                     <Row>
                         <Col>
                             <Group controlId="year_bonus">
-                                <Label>Year Bonus</Label>
-                                <Control type="text" placeholder="Year Bonus" name="year_bonus"/>
+                                <Label>Yearly Bonus</Label>
+                                <Control type="text" placeholder="Yearly Bonus" name="year_bonus"/>
                             </Group>
                         </Col>
                         <Col>
                             <Group controlId="extra_income">
-                                <Label>Extra Income</Label>
-                                <Control type="text" placeholder="Extra Income" name="extra_income"/>
+                                <Label>Other Income</Label>
+                                <Control type="text" placeholder="Other Income" name="extra_income"/>
                             </Group>
                         </Col>
                     </Row>
@@ -118,22 +118,22 @@ function TaxForm() {
                     </Row>
 
                     <br/>
-                    <h4>Other Eligibility</h4>
+                    <h4>Other Eligibilities</h4>
                     <hr/>
                     <Row>
                         <Col>
                             <Group controlId="attain_transport">
-                                <Check type="switch" label="Attain Transport"/>
+                                <Check type="switch" label="Workplace Provides Transport"/>
                             </Group>
                         </Col>
                         <Col>
                             <Group controlId="in_city">
-                                <Check type="switch" label="In City"/>
+                                <Check type="switch" label="Resides in City"/>
                             </Group>
                         </Col>
                         <Col>
                             <Group controlId="ctg_or_dhaka">
-                                <Check type="switch" label="CTG or Dhaka"/>
+                                <Check type="switch" label="Resides in CTG or Dhaka"/>
                             </Group>
                         </Col>
                     </Row>
