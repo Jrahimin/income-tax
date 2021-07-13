@@ -18,6 +18,8 @@ function TaxForm() {
             <div className="card-header text-center bg-info">Calculate Income TAX</div>
             <div className="card-body">
                 <Form onSubmit={submit}>
+                    <h4>Personal Info</h4>
+                    <hr/>
                     <Row>
                         <Col>
                             <Group controlId="name">
@@ -34,16 +36,36 @@ function TaxForm() {
                     </Row>
                     <Row>
                         <Col>
+                            <Group controlId="mobile_number">
+                                <Label>Mobile Number</Label>
+                                <Control type="text" placeholder="Enter Mobile Number" name="mobile_number"/>
+                            </Group>
+                        </Col>
+                        <Col>
+                            <Group controlId="email">
+                                <Label>Email</Label>
+                                <Control type="text" placeholder="Enter email" name="email"/>
+                            </Group>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col>
                             <Group controlId="age">
                                 <Label>Age</Label>
                                 <Control type="text" placeholder="Enter age" name="age"/>
                             </Group>
                         </Col>
                         <Col>
+                            <Label>Gender</Label>
+                            <br/>
                             <Form.Check inline label="Male" name="gender" type="radio" value="m" defaultChecked={true}/>
                             <Form.Check inline label="Female" name="gender" type="radio" value="f"/>
                         </Col>
                     </Row>
+
+                    <br/>
+                    <h4>Yearly Income & Investment</h4>
+                    <hr/>
                     <Row>
                         <Col>
                             <Group controlId="year_basic">
@@ -74,21 +96,6 @@ function TaxForm() {
                     </Row>
                     <Row>
                         <Col>
-                            <Group controlId="total_invest">
-                                <Label>Tax Rebatable Investment</Label>
-                                <Control type="text" placeholder="Total Invest" name="total_invest"/>
-                            </Group>
-                        </Col>
-                        <Col>
-                            <Group controlId="bar_taken">
-                                <Label>Bar Taken</Label>
-                                <Control type="text" placeholder="Bar Taken" name="bar_taken"/>
-                            </Group>
-                        </Col>
-
-                    </Row>
-                    <Row>
-                        <Col>
                             <Group controlId="year_bonus">
                                 <Label>Year Bonus</Label>
                                 <Control type="text" placeholder="Year Bonus" name="year_bonus"/>
@@ -101,38 +108,49 @@ function TaxForm() {
                             </Group>
                         </Col>
                     </Row>
+                    <Row>
+                        <Col>
+                            <Group controlId="total_invest">
+                                <Label>Tax Rebatable Investment</Label>
+                                <Control type="text" placeholder="Total Investment" name="total_invest"/>
+                            </Group>
+                        </Col>
+                    </Row>
 
+                    <br/>
+                    <h4>Other Eligibility</h4>
+                    <hr/>
                     <Row>
                         <Col>
                             <Group controlId="attain_transport">
-                                <Check type="checkbox" label="Attain Transport"/>
+                                <Check type="switch" label="Attain Transport"/>
                             </Group>
                         </Col>
                         <Col>
                             <Group controlId="in_city">
-                                <Check type="checkbox" label="In City"/>
+                                <Check type="switch" label="In City"/>
                             </Group>
                         </Col>
                         <Col>
                             <Group controlId="ctg_or_dhaka">
-                                <Check type="checkbox" label="CTG or Dhaka"/>
+                                <Check type="switch" label="CTG or Dhaka"/>
                             </Group>
                         </Col>
                     </Row>
                     <Row>
                         <Col>
                             <Group controlId="is_disabled">
-                                <Check type="checkbox" label="Is Disabled"/>
+                                <Check type="switch" label="Is Disabled"/>
                             </Group>
                         </Col>
                         <Col>
                             <Group controlId="is_freedom_fighter">
-                                <Check type="checkbox" label="Is Freedom Fighter"/>
+                                <Check type="switch" label="Is Freedom Fighter"/>
                             </Group>
                         </Col>
                         <Col>
                             <Group controlId="has_disabled_child">
-                                <Check type="checkbox" label="Has Disabled Child"/>
+                                <Check type="switch" label="Has Disabled Child & Facility not taken"/>
                             </Group>
                         </Col>
                     </Row>
