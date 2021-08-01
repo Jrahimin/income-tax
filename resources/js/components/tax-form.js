@@ -8,7 +8,7 @@ const {
     Check
 } = Form;
 
-const TaxForm = () => {
+const TaxForm = (props) => {
     const [taxData, setTaxData] = useState({
         "name": "",
         "occupation": "",

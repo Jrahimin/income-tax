@@ -5515,7 +5515,7 @@ var Group = react_bootstrap__WEBPACK_IMPORTED_MODULE_2__.default.Group,
     Label = react_bootstrap__WEBPACK_IMPORTED_MODULE_2__.default.Label,
     Check = react_bootstrap__WEBPACK_IMPORTED_MODULE_2__.default.Check;
 
-var TaxForm = function TaxForm() {
+var TaxForm = function TaxForm(props) {
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
     "name": "",
     "occupation": "",
