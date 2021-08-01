@@ -90,7 +90,7 @@ const TaxForm = () => {
                    size="lg"
                    aria-labelledby="contained-modal-title-vcenter"
                    centered>
-                <Modal.Header closeButton>
+                <Modal.Header closeButton className={'bg-info'}>
                     <Modal.Title><h5 className="modal-title" id="taxInfoModal">Tax Information Details</h5>
                     </Modal.Title>
                 </Modal.Header>
