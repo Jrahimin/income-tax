@@ -3,81 +3,75 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Request\TaxCalculateRequest;
+use App\Http\Traits\ApiResponseTrait;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 
 class TaxCalculateController extends Controller
 {
-    /*
-        ::Sample Request::
-    "name": "Md Ariful",
-    "occupation": "Software Engineer",
-    "age": 32,
-    "gender": "m",
-    "is_freedom_fighter": false,
-    "is_disabled": false,
-    "has_disabled_child": false,
-    "bar_taken": false,
-    "year_basic": 1500000, (full add)
-    "year_bonus": 120000, (full add)
-    "extra_income": 150000 (full add)
-    "year_house_rent": 800000, ( min(50% or 3lakh) => minus from total house rent )
-    "year_medical": 400000, ( min(10% or 1lakhs20k) => minus from total medical )
-    "year_transport": 100000, ( for no car facility => won't add upto 30k. for car facility => max(5% or 60k) will be added )
-    "attain_transport": false
-    "in_city": true ( if false => 3k min )
-    "ctg_or_dhaka": true ( true => 5k min. false => 4k min )
-    "total_invest": 0
-     */
+    use ApiResponseTrait;
+
+    protected $exceptionMessage;
+
+    public function __construct()
+    {
+        $this->exceptionMessage = "Something went wrong. please try again later.";
+    }
 
     public function index()
     {
         return view('tax-calculate');
     }
 
-    public function calculate(Request $request)
+    public function calculate(TaxCalculateRequest $request)
     {
-        // TODO need to about provident fund
+        try{
+            // TODO need to about provident fund
 
-        // Taxable income Calculation
-        $houseRentTaxable = $this->getHouseRentTaxableAmount($request->year_house_rent);
-        $medicalTaxable = $this->getMedicalTaxableAmount($request->year_medical);
-        $transportTaxable = $this->getTransportTaxableAmount($request->year_transport, $request->attain_transport);
+            // Taxable income Calculation
+            $houseRentTaxable = $this->getHouseRentTaxableAmount($request->year_house_rent);
+            $medicalTaxable = $this->getMedicalTaxableAmount($request->year_medical);
+            $transportTaxable = $this->getTransportTaxableAmount($request->year_transport, $request->attain_transport);
 
-        $totalTaxableIncome = $request->year_basic + $request->year_bonus + $request->extra_income + $houseRentTaxable + $medicalTaxable + $transportTaxable;
+            $totalTaxableIncome = $request->year_basic + $request->year_bonus + $request->extra_income + $houseRentTaxable + $medicalTaxable + $transportTaxable;
 
-        Log::info("Total taxable income : {$totalTaxableIncome}");
+            Log::info("Total taxable income : {$totalTaxableIncome}");
 
-        $taxFreeIncome = $this->getTaxFreeAmount($request);
+            $taxFreeIncome = $this->getTaxFreeAmount($request);
 
-        if($totalTaxableIncome <= $taxFreeIncome)
-            return response()->json(['tax' => 0]);
+            if($totalTaxableIncome <= $taxFreeIncome)
+                return $this->successResponse('tax info', ["finalIncomeTax" => 0]);
 
-        $payableAmount = $totalTaxableIncome - $taxFreeIncome;
+            $payableAmount = $totalTaxableIncome - $taxFreeIncome;
 
-        Log::info("Tax payable income : {$payableAmount}");
+            Log::info("Tax payable income : {$payableAmount}");
 
-        $taxOnPayableAmount = $this->getTaxAmountOnPayableMoney($payableAmount, $request);
+            $taxOnPayableAmount = $this->getTaxAmountOnPayableMoney($payableAmount, $request);
 
-        Log::info("tax on payable money : {$taxOnPayableAmount}");
+            Log::info("tax on payable money : {$taxOnPayableAmount}");
 
-        $rebateAmount = $this->getTaxRebateAmount($request->total_invest);
+            $rebateAmount = $this->getTaxRebateAmount($request->total_invest);
 
-        Log::info("total rebate : {$rebateAmount}");
+            Log::info("total rebate : {$rebateAmount}");
 
-        $finalTaxAmount = $taxOnPayableAmount > $rebateAmount ? $taxOnPayableAmount - $rebateAmount : 0;
+            $finalTaxAmount = $taxOnPayableAmount > $rebateAmount ? $taxOnPayableAmount - $rebateAmount : 0;
 
-        Log::info("Final Income Tax : {$finalTaxAmount}");
+            Log::info("Final Income Tax : {$finalTaxAmount}");
 
-        $taxInfo = array(
-            "totalTaxableIncome" => $totalTaxableIncome,
-            "payableIncomeAboveBar" => $payableAmount,
-            "taxOnPayableAmount" => $taxOnPayableAmount,
-            "taxRebateAmount" => $rebateAmount,
-            "finalIncomeTax" => $finalTaxAmount
-        );
+            $taxInfo = array(
+                "totalTaxableIncome" => $totalTaxableIncome,
+                "payableIncomeAboveBar" => $payableAmount,
+                "taxOnPayableAmount" => $taxOnPayableAmount,
+                "taxRebateAmount" => $rebateAmount,
+                "finalIncomeTax" => $finalTaxAmount
+            );
 
-        return response()->json($taxInfo);
+            return $this->successResponse('tax info', $taxInfo);
+        }catch(\Exception $e) {
+            Log::error('Found Exception: ' . $e->getMessage() . ' [Script: ' . __CLASS__.'@'.__FUNCTION__ . '] [Origin: ' . $e->getFile() . '-' . $e->getLine() . ']');
+            return $this->exceptionResponse($this->exceptionMessage);
+        }
     }
 
     protected function getHouseRentTaxableAmount($houseRent)

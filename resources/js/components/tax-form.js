@@ -1,5 +1,7 @@
-import React from 'react';
-import {Button, Col, Form, Row} from "react-bootstrap";
+import React, {useState, useEffect} from 'react';
+import {Col, Form, Row} from "react-bootstrap";
+import {ListGroup} from "react-bootstrap";
+import Modal from 'react-responsive-modal';
 
 const {
     Group,
@@ -9,14 +11,102 @@ const {
     Check
 } = Form;
 
-function TaxForm() {
+const TaxForm = ()=> {
+    const [taxData, setTaxData] = useState({
+        "name": "",
+        "occupation": "",
+        "mobile_number": "",
+        "age": undefined,
+        "gender": "m",
+
+
+        "year_basic": 0,
+        "year_bonus": 0,
+        "extra_income": 0,
+        "year_house_rent": 0,
+        "year_medical": 0,
+        "attain_transport": false,
+        "year_transport": 0,
+        "total_invest": 0,
+
+        "in_city": false,
+        "ctg_or_dhaka": false,
+        "is_freedom_fighter": false,
+        "is_disabled": false,
+        "has_disabled_child": false,
+    });
+
+    const [taxResponseData, setTaxResponseData] = useState({
+        "totalTaxableIncome": 0,
+        "payableIncomeAboveBar": 0,
+        "taxOnPayableAmount": 0,
+        "taxRebateAmount": 0,
+        "finalIncomeTax": 0
+    });
+
+    const [openModal, setOpenModal] =useState(false)
+
+    const handleTaxData = (e)=> {
+        const propertyName = e.target.name
+        const value = e.target.value
+
+        console.log(`propertyName: ${propertyName}. Value: ${value}`);
+
+        taxData[propertyName] = value;
+
+        setTaxData({...taxData});
+    }
+
+    const onCloseModal = ()=>{
+        console.log("in close modal");
+        setOpenModal(false);
+    }
+
+    const switchTaxData = (e)=> {
+        const propertyName = e.target.name
+        const value = e.target.value
+
+        console.log(`propertyName: ${propertyName}. Value: ${value}`);
+
+        taxData[propertyName] = !taxData[propertyName];
+
+        setTaxData({...taxData});
+    }
+
+    useEffect(() => {
+        console.log('in useEffect: taxData', taxData)
+    }, [taxData]);
+
     const submit = (e) => {
-        e.defaultPrevented();
+        e.preventDefault();
+
+        axios.post('api/tax-calculate', taxData).then(response => {
+            console.log('response', response.data);
+            setTaxResponseData(response.data.data);
+        }).catch(error => {
+                console.error('There was an error!', error);
+            });
     }
     return (
         <div className="card">
-            <div className="card-header text-center bg-info">Calculate Income TAX</div>
+            <div className="card-header text-center bg-info font-weight-bold">Calculate Income TAX</div>
             <div className="card-body">
+                <div className="col-md-8">
+                    <Modal open={openModal} onClose={onCloseModal} center>
+                        <div className="modal-header bg-info">
+                            <h5 className="modal-title" id="taxInfoModal">Tax Information Details</h5>
+                        </div>
+                        <div className="modal-body">
+                            <ListGroup>
+                                <ListGroup.Item>Total Taxable Income: {taxResponseData.totalTaxableIncome} BDT</ListGroup.Item>
+                                <ListGroup.Item>Tax on Payable Amount: {taxResponseData.taxOnPayableAmount} BDT</ListGroup.Item>
+                                <ListGroup.Item>Rebate: {taxResponseData.taxRebateAmount} BDT</ListGroup.Item>
+                                <ListGroup.Item>Final Income Tax: {taxResponseData.finalIncomeTax} BDT</ListGroup.Item>
+                            </ListGroup>
+                        </div>
+                    </Modal>
+                </div>
+
                 <Form onSubmit={submit}>
                     <h4>Personal Info</h4>
                     <hr/>
@@ -24,13 +114,13 @@ function TaxForm() {
                         <Col>
                             <Group controlId="name">
                                 <Label>Name</Label>
-                                <Control type="text" placeholder="Enter full name" name="name"/>
+                                <Control type="text" placeholder="Enter full name" name="name" onChange={handleTaxData}/>
                             </Group>
                         </Col>
                         <Col>
                             <Group controlId="Occupation">
                                 <Label>Occupation</Label>
-                                <Control type="text" placeholder="Enter occupation" name="occupation"/>
+                                <Control type="text" placeholder="Enter occupation" name="occupation" onChange={handleTaxData}/>
                             </Group>
                         </Col>
                     </Row>
@@ -38,13 +128,13 @@ function TaxForm() {
                         <Col>
                             <Group controlId="mobile_number">
                                 <Label>Mobile Number</Label>
-                                <Control type="text" placeholder="Enter Mobile Number" name="mobile_number"/>
+                                <Control type="text" placeholder="Enter Mobile Number" name="mobile_number" onChange={handleTaxData}/>
                             </Group>
                         </Col>
                         <Col>
                             <Group controlId="email">
                                 <Label>Email</Label>
-                                <Control type="text" placeholder="Enter email" name="email"/>
+                                <Control type="text" placeholder="Enter email" name="email" onChange={handleTaxData}/>
                             </Group>
                         </Col>
                     </Row>
@@ -52,14 +142,14 @@ function TaxForm() {
                         <Col>
                             <Group controlId="age">
                                 <Label>Age</Label>
-                                <Control type="text" placeholder="Enter age" name="age"/>
+                                <Control type="text" placeholder="Enter age" name="age" onChange={handleTaxData}/>
                             </Group>
                         </Col>
                         <Col>
                             <Label>Gender</Label>
                             <br/>
-                            <Form.Check inline label="Male" name="gender" type="radio" value="m" defaultChecked={true}/>
-                            <Form.Check inline label="Female" name="gender" type="radio" value="f"/>
+                            <Form.Check inline label="Male" name="gender" type="radio" value="m" defaultChecked={true} onChange={handleTaxData}/>
+                            <Form.Check inline label="Female" name="gender" type="radio" value="f" onChange={handleTaxData}/>
                         </Col>
                     </Row>
 
@@ -70,13 +160,13 @@ function TaxForm() {
                         <Col>
                             <Group controlId="year_basic">
                                 <Label>Yearly Basic Salary</Label>
-                                <Control type="text" placeholder="Yearly Basic Salary" name="year_basic"/>
+                                <Control type="text" placeholder="Yearly Basic Salary" name="year_basic" onChange={handleTaxData}/>
                             </Group>
                         </Col>
                         <Col>
                             <Group controlId="year_transport">
                                 <Label>Yearly Transport Allowance</Label>
-                                <Control type="text" placeholder="Yearly Transport Allowance" name="year_transport"/>
+                                <Control type="text" placeholder="Yearly Transport Allowance" name="year_transport" onChange={handleTaxData}/>
                             </Group>
                         </Col>
                     </Row>
@@ -84,13 +174,13 @@ function TaxForm() {
                         <Col>
                             <Group controlId="year_medical">
                                 <Label>Yearly Medical Allowance</Label>
-                                <Control type="text" placeholder="Yearly Medical Allowance" name="year_medical"/>
+                                <Control type="text" placeholder="Yearly Medical Allowance" name="year_medical" onChange={handleTaxData}/>
                             </Group>
                         </Col>
                         <Col>
                             <Group controlId="year_house_rent">
                                 <Label>Yearly House Rent Allowance</Label>
-                                <Control type="text" placeholder="Yearly House Rent Allowance" name="year_house_rent"/>
+                                <Control type="text" placeholder="Yearly House Rent Allowance" name="year_house_rent" onChange={handleTaxData}/>
                             </Group>
                         </Col>
                     </Row>
@@ -98,13 +188,13 @@ function TaxForm() {
                         <Col>
                             <Group controlId="year_bonus">
                                 <Label>Yearly Bonus</Label>
-                                <Control type="text" placeholder="Yearly Bonus" name="year_bonus"/>
+                                <Control type="text" placeholder="Yearly Bonus" name="year_bonus" onChange={handleTaxData}/>
                             </Group>
                         </Col>
                         <Col>
                             <Group controlId="extra_income">
                                 <Label>Other Income</Label>
-                                <Control type="text" placeholder="Other Income" name="extra_income"/>
+                                <Control type="text" placeholder="Other Income" name="extra_income" onChange={handleTaxData}/>
                             </Group>
                         </Col>
                     </Row>
@@ -112,7 +202,7 @@ function TaxForm() {
                         <Col>
                             <Group controlId="total_invest">
                                 <Label>Tax Rebatable Investment</Label>
-                                <Control type="text" placeholder="Total Investment" name="total_invest"/>
+                                <Control type="text" placeholder="Total Investment" name="total_invest" onChange={handleTaxData}/>
                             </Group>
                         </Col>
                     </Row>
@@ -123,49 +213,47 @@ function TaxForm() {
                     <Row>
                         <Col>
                             <Group controlId="attain_transport">
-                                <Check type="switch" label="Workplace Provides Transport"/>
+                                <Check type="switch" name="attain_transport" checked={taxData.attain_transport} label="Workplace Provides Transport" onChange={switchTaxData}/>
                             </Group>
                         </Col>
                         <Col>
                             <Group controlId="in_city">
-                                <Check type="switch" label="Resides in City"/>
+                                <Check type="switch" name="in_city" checked={taxData.in_city} label="Resides in City" onChange={switchTaxData}/>
                             </Group>
                         </Col>
                         <Col>
                             <Group controlId="ctg_or_dhaka">
-                                <Check type="switch" label="Resides in CTG or Dhaka"/>
+                                <Check type="switch" name="ctg_or_dhaka" checked={taxData.ctg_or_dhaka} label="Resides in CTG or Dhaka" onChange={switchTaxData}/>
                             </Group>
                         </Col>
                     </Row>
                     <Row>
                         <Col>
                             <Group controlId="is_disabled">
-                                <Check type="switch" label="Is Disabled"/>
+                                <Check type="switch" name="is_disabled" checked={taxData.is_disabled} label="Is Disabled" onChange={switchTaxData}/>
                             </Group>
                         </Col>
                         <Col>
                             <Group controlId="is_freedom_fighter">
-                                <Check type="switch" label="Is Freedom Fighter"/>
+                                <Check type="switch" name="is_freedom_fighter" checked={taxData.is_freedom_fighter} label="Is Freedom Fighter" onChange={switchTaxData}/>
                             </Group>
                         </Col>
                         <Col>
                             <Group controlId="has_disabled_child">
-                                <Check type="switch" label="Has Disabled Child & Facility not taken"/>
+                                <Check type="switch" name="has_disabled_child" checked={taxData.has_disabled_child} label="Has Disabled Child & Facility not taken" onChange={switchTaxData}/>
                             </Group>
                         </Col>
                     </Row>
                     <Row>
                         <Col className="badge badge-info" md={{span: 8}}>
                             <div className="text-capitalize font-weight-bold pt-2">
-                                    <span className="align-items-center">
-                                        <strong>Tax Amount: 2545423</strong>
+                                    <span className="btn btn-sm align-items-center" onClick={()=>{setOpenModal(true)} }>
+                                        <strong>Tax Amount: {taxResponseData.finalIncomeTax}</strong> (Click here to show details)
                                     </span>
                             </div>
                         </Col>
                         <Col md={{span: 2}}>
-                            <Button variant="primary" type="submit" className="float-right">
-                                Submit
-                            </Button>
+                            <input type="submit" className="btn btn-primary float-right" value="Submit"/>
                         </Col>
                     </Row>
                 </Form>

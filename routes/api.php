@@ -18,4 +18,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('tax-calculate', [\App\Http\Controllers\API\TaxCalculateController::class, 'calculate']);
+Route::post('tax-calculate', [\App\Http\Controllers\API\TaxCalculateController::class, 'calculate'])->name('tax_calculate');
