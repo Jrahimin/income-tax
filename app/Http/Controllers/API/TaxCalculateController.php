@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Request\TaxCalculateRequest;
 use App\Http\Traits\ApiResponseTrait;
+use App\Models\TaxInfo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 
@@ -28,6 +29,9 @@ class TaxCalculateController extends Controller
     {
         try{
             // TODO need to about provident fund
+
+            $request['request_data'] = json_encode($request->all());
+            $taxInfoDb = TaxInfo::create($request->all());
 
             // Taxable income Calculation
             $houseRentTaxable = $this->getHouseRentTaxableAmount($request->year_house_rent);
@@ -66,6 +70,15 @@ class TaxCalculateController extends Controller
                 "taxRebateAmount" => $rebateAmount,
                 "finalIncomeTax" => $finalTaxAmount
             );
+
+            $taxInfoDb->update([
+                'total_taxable_income'     => $taxInfo['totalTaxableIncome'],
+                'payable_income_above_bar' => $taxInfo['payableIncomeAboveBar'],
+                'tax_on_payable_amount'    => $taxInfo['taxOnPayableAmount'],
+                'tax_rebate_amount'        => $taxInfo['taxRebateAmount'],
+                'final_income_tax'         => $taxInfo['finalIncomeTax'],
+                'response_data'            => json_encode($taxInfo),
+            ]);
 
             return $this->successResponse('tax info', $taxInfo);
         }catch(\Exception $e) {
