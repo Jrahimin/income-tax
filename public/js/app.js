@@ -5586,6 +5586,7 @@ var TaxForm = function TaxForm(props) {
     axios.post('api/tax-calculate', taxData).then(function (response) {
       console.log('response', response.data);
       setTaxResponseData(response.data.data);
+      setOpenModal(true);
     })["catch"](function (error) {
       console.error('There was an error!', error);
     });
@@ -5598,6 +5599,7 @@ var TaxForm = function TaxForm(props) {
       size: "lg",
       "aria-labelledby": "contained-modal-title-vcenter",
       centered: true,
+      onHide: onCloseModal,
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__.default.Header, {
         closeButton: true,
         className: 'bg-info',
@@ -5610,6 +5612,7 @@ var TaxForm = function TaxForm(props) {
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__.default.Body, {
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__.default, {
+          className: 'font-weight-bold',
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__.default.Item, {
             children: ["Total Taxable Income: ", (taxResponseData === null || taxResponseData === void 0 ? void 0 : taxResponseData.totalTaxableIncome) || 0, " BDT"]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__.default.Item, {
@@ -5891,34 +5894,23 @@ var TaxForm = function TaxForm(props) {
                 })
               })
             })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__.default, {
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_7__.default, {
-              className: "badge badge-info",
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("hr", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__.default, {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_7__.default, {
               md: {
-                span: 8
+                span: 4,
+                offset: 4
               },
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-                className: "text-capitalize font-weight-bold pt-2",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("span", {
-                  className: "btn btn-sm align-items-center",
-                  onClick: function onClick() {
-                    setOpenModal(true);
-                  },
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("strong", {
-                    children: ["Tax Amount: ", taxResponseData === null || taxResponseData === void 0 ? void 0 : taxResponseData.finalIncomeTax]
-                  }), " (Click here to show details)"]
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__.default, {
+                type: "submit",
+                className: "btn btn-info w-100 p-2",
+                style: {
+                  color: 'black'
+                },
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("strong", {
+                  children: "Calculate"
                 })
               })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_7__.default, {
-              md: {
-                span: 2
-              },
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
-                type: "submit",
-                className: "btn btn-primary float-right",
-                value: "Submit"
-              })
-            })]
+            })
           })]
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {

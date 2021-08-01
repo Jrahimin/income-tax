@@ -80,6 +80,7 @@ const TaxForm = (props) => {
         axios.post('api/tax-calculate', taxData).then(response => {
             console.log('response', response.data);
             setTaxResponseData(response.data.data);
+            setOpenModal(true);
         }).catch(error => {
             console.error('There was an error!', error);
         });
@@ -89,13 +90,14 @@ const TaxForm = (props) => {
             <Modal show={openModal} {...props}
                    size="lg"
                    aria-labelledby="contained-modal-title-vcenter"
-                   centered>
+                   centered onHide={onCloseModal}>
                 <Modal.Header closeButton className={'bg-info'}>
-                    <Modal.Title><h5 className="modal-title" id="taxInfoModal">Tax Information Details</h5>
+                    <Modal.Title>
+                        <h5 className="modal-title" id="taxInfoModal">Tax Information Details</h5>
                     </Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <ListGroup>
+                    <ListGroup className={'font-weight-bold'}>
                         <ListGroup.Item>Total Taxable
                             Income: {taxResponseData?.totalTaxableIncome || 0} BDT</ListGroup.Item>
                         <ListGroup.Item>Tax on Payable
@@ -269,18 +271,20 @@ const TaxForm = (props) => {
                                 </Group>
                             </Col>
                         </Row>
+                        <hr/>
                         <Row>
-                            <Col className="badge badge-info" md={{span: 8}}>
-                                <div className="text-capitalize font-weight-bold pt-2">
-                                    <span className="btn btn-sm align-items-center" onClick={() => {
-                                        setOpenModal(true)
-                                    }}>
-                                        <strong>Tax Amount: {taxResponseData?.finalIncomeTax}</strong> (Click here to show details)
-                                    </span>
-                                </div>
-                            </Col>
-                            <Col md={{span: 2}}>
-                                <input type="submit" className="btn btn-primary float-right" value="Submit"/>
+                            {/*<Col className="badge badge-info" md={{span: 8}}>*/}
+                            {/*    <div className="text-capitalize font-weight-bold pt-2">*/}
+                            {/*        <span className="btn btn-sm align-items-center" onClick={() => {*/}
+                            {/*            setOpenModal(true)*/}
+                            {/*        }}>*/}
+                            {/*            <strong>Tax Amount: {taxResponseData?.finalIncomeTax}</strong> (Click here to show details)*/}
+                            {/*        </span>*/}
+                            {/*    </div>*/}
+                            {/*</Col>*/}
+                            <Col md={{span: 4, offset: 4}}>
+                                <Button type="submit" className="btn btn-info w-100 p-2"
+                                        style={{color: 'black'}}><strong>Calculate</strong></Button>
                             </Col>
                         </Row>
                     </Form>
