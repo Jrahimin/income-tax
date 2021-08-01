@@ -103,43 +103,6 @@ function _setPrototypeOf(o, p) {
 
 /***/ }),
 
-/***/ "./node_modules/@bedrock-layout/use-forwarded-ref/lib/index.m.js":
-/*!***********************************************************************!*\
-  !*** ./node_modules/@bedrock-layout/use-forwarded-ref/lib/index.m.js ***!
-  \***********************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _bedrock_layout_use_stateful_ref__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @bedrock-layout/use-stateful-ref */ "./node_modules/@bedrock-layout/use-stateful-ref/lib/index.m.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-function e(e){var u=(0,_bedrock_layout_use_stateful_ref__WEBPACK_IMPORTED_MODULE_1__.default)(null);return react__WEBPACK_IMPORTED_MODULE_0__.useEffect(function(){e&&("function"==typeof e?e(u.current):e.current=u.current)}),u}/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (e);
-//# sourceMappingURL=index.m.js.map
-
-
-/***/ }),
-
-/***/ "./node_modules/@bedrock-layout/use-stateful-ref/lib/index.m.js":
-/*!**********************************************************************!*\
-  !*** ./node_modules/@bedrock-layout/use-stateful-ref/lib/index.m.js ***!
-  \**********************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-function t(t){void 0===t&&(t=null);var r=react__WEBPACK_IMPORTED_MODULE_0__.useState(t),n=r[0],u=r[1],c=react__WEBPACK_IMPORTED_MODULE_0__.useRef({current:n}).current;return Object.defineProperty(c,"current",{get:function(){return n},set:function(e){Object.is(n,e)||(n=e,u(e))}}),c}/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (t);
-//# sourceMappingURL=index.m.js.map
-
-
-/***/ }),
-
 /***/ "./node_modules/@popperjs/core/lib/createPopper.js":
 /*!*********************************************************!*\
   !*** ./node_modules/@popperjs/core/lib/createPopper.js ***!
@@ -5517,12 +5480,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/Form.js");
-/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/Row.js");
-/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/Col.js");
+/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/Form.js");
+/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/Modal.js");
 /* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/ListGroup.js");
-/* harmony import */ var react_responsive_modal__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-responsive-modal */ "./node_modules/react-responsive-modal/dist/react-responsive-modal.esm.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/Button.js");
+/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/Row.js");
+/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/Col.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -5546,12 +5510,10 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-
-var Group = react_bootstrap__WEBPACK_IMPORTED_MODULE_3__.default.Group,
-    Control = react_bootstrap__WEBPACK_IMPORTED_MODULE_3__.default.Control,
-    Label = react_bootstrap__WEBPACK_IMPORTED_MODULE_3__.default.Label,
-    Text = react_bootstrap__WEBPACK_IMPORTED_MODULE_3__.default.Text,
-    Check = react_bootstrap__WEBPACK_IMPORTED_MODULE_3__.default.Check;
+var Group = react_bootstrap__WEBPACK_IMPORTED_MODULE_2__.default.Group,
+    Control = react_bootstrap__WEBPACK_IMPORTED_MODULE_2__.default.Control,
+    Label = react_bootstrap__WEBPACK_IMPORTED_MODULE_2__.default.Label,
+    Check = react_bootstrap__WEBPACK_IMPORTED_MODULE_2__.default.Check;
 
 var TaxForm = function TaxForm() {
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
@@ -5629,565 +5591,346 @@ var TaxForm = function TaxForm() {
     });
   };
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-    className: "card",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-      className: "card-header text-center bg-info font-weight-bold",
-      children: "Calculate Income TAX"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-      className: "card-body",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-        className: "col-md-8",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_responsive_modal__WEBPACK_IMPORTED_MODULE_1__.default, {
-          open: openModal,
-          onClose: onCloseModal,
-          center: true,
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-            className: "modal-header bg-info",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h5", {
-              className: "modal-title",
-              id: "taxInfoModal",
-              children: "Tax Information Details"
-            })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-            className: "modal-body",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__.default, {
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__.default.Item, {
-                children: ["Total Taxable Income: ", taxResponseData.totalTaxableIncome, " BDT"]
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__.default.Item, {
-                children: ["Tax on Payable Amount: ", taxResponseData.taxOnPayableAmount, " BDT"]
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__.default.Item, {
-                children: ["Rebate: ", taxResponseData.taxRebateAmount, " BDT"]
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__.default.Item, {
-                children: ["Final Income Tax: ", taxResponseData.finalIncomeTax, " BDT"]
-              })]
-            })
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__.default, _objectSpread(_objectSpread({
+      show: openModal
+    }, props), {}, {
+      size: "lg",
+      "aria-labelledby": "contained-modal-title-vcenter",
+      centered: true,
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__.default.Header, {
+        closeButton: true,
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__.default.Title, {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h5", {
+            className: "modal-title",
+            id: "taxInfoModal",
+            children: "Tax Information Details"
+          })
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__.default.Body, {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__.default, {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__.default.Item, {
+            children: ["Total Taxable Income: ", (taxResponseData === null || taxResponseData === void 0 ? void 0 : taxResponseData.totalTaxableIncome) || 0, " BDT"]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__.default.Item, {
+            children: ["Tax on Payable Amount: ", (taxResponseData === null || taxResponseData === void 0 ? void 0 : taxResponseData.taxOnPayableAmount) || 0, " BDT"]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__.default.Item, {
+            children: ["Rebate: ", (taxResponseData === null || taxResponseData === void 0 ? void 0 : taxResponseData.taxRebateAmount) || 0, " BDT"]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__.default.Item, {
+            children: ["Final Income Tax: ", (taxResponseData === null || taxResponseData === void 0 ? void 0 : taxResponseData.finalIncomeTax) || 0, " BDT"]
           })]
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__.default, {
-        onSubmit: submit,
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h4", {
-          children: "Personal Info"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("hr", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__.default, {
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__.default, {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(Group, {
-              controlId: "name",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(Label, {
-                children: "Name"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(Control, {
-                type: "text",
-                placeholder: "Enter full name",
-                name: "name",
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__.default.Footer, {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__.default, {
+          variant: "secondary",
+          onClick: function onClick() {
+            return setOpenModal(false);
+          },
+          children: "Close"
+        })
+      })]
+    })), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+      className: "card",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+        className: "card-header text-center bg-info font-weight-bold",
+        children: "Calculate Income TAX"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+        className: "card-body",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__.default, {
+          onSubmit: submit,
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h4", {
+            children: "Personal Info"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("hr", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__.default, {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_7__.default, {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(Group, {
+                controlId: "name",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(Label, {
+                  children: "Name"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(Control, {
+                  type: "text",
+                  placeholder: "Enter full name",
+                  name: "name",
+                  onChange: handleTaxData
+                })]
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_7__.default, {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(Group, {
+                controlId: "Occupation",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(Label, {
+                  children: "Occupation"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(Control, {
+                  type: "text",
+                  placeholder: "Enter occupation",
+                  name: "occupation",
+                  onChange: handleTaxData
+                })]
+              })
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__.default, {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_7__.default, {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(Group, {
+                controlId: "mobile_number",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(Label, {
+                  children: "Mobile Number"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(Control, {
+                  type: "text",
+                  placeholder: "Enter Mobile Number",
+                  name: "mobile_number",
+                  onChange: handleTaxData
+                })]
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_7__.default, {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(Group, {
+                controlId: "email",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(Label, {
+                  children: "Email"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(Control, {
+                  type: "text",
+                  placeholder: "Enter email",
+                  name: "email",
+                  onChange: handleTaxData
+                })]
+              })
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__.default, {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_7__.default, {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(Group, {
+                controlId: "age",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(Label, {
+                  children: "Age"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(Control, {
+                  type: "text",
+                  placeholder: "Enter age",
+                  name: "age",
+                  onChange: handleTaxData
+                })]
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_7__.default, {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(Label, {
+                children: "Gender"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__.default.Check, {
+                inline: true,
+                label: "Male",
+                name: "gender",
+                type: "radio",
+                value: "m",
+                defaultChecked: true,
+                onChange: handleTaxData
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__.default.Check, {
+                inline: true,
+                label: "Female",
+                name: "gender",
+                type: "radio",
+                value: "f",
                 onChange: handleTaxData
               })]
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h4", {
+            children: "Yearly Income & Investment"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("hr", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__.default, {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_7__.default, {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(Group, {
+                controlId: "year_basic",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(Label, {
+                  children: "Yearly Basic Salary"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(Control, {
+                  type: "text",
+                  placeholder: "Yearly Basic Salary",
+                  name: "year_basic",
+                  onChange: handleTaxData
+                })]
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_7__.default, {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(Group, {
+                controlId: "year_transport",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(Label, {
+                  children: "Yearly Transport Allowance"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(Control, {
+                  type: "text",
+                  placeholder: "Yearly Transport Allowance",
+                  name: "year_transport",
+                  onChange: handleTaxData
+                })]
+              })
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__.default, {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_7__.default, {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(Group, {
+                controlId: "year_medical",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(Label, {
+                  children: "Yearly Medical Allowance"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(Control, {
+                  type: "text",
+                  placeholder: "Yearly Medical Allowance",
+                  name: "year_medical",
+                  onChange: handleTaxData
+                })]
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_7__.default, {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(Group, {
+                controlId: "year_house_rent",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(Label, {
+                  children: "Yearly House Rent Allowance"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(Control, {
+                  type: "text",
+                  placeholder: "Yearly House Rent Allowance",
+                  name: "year_house_rent",
+                  onChange: handleTaxData
+                })]
+              })
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__.default, {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_7__.default, {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(Group, {
+                controlId: "year_bonus",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(Label, {
+                  children: "Yearly Bonus"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(Control, {
+                  type: "text",
+                  placeholder: "Yearly Bonus",
+                  name: "year_bonus",
+                  onChange: handleTaxData
+                })]
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_7__.default, {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(Group, {
+                controlId: "extra_income",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(Label, {
+                  children: "Other Income"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(Control, {
+                  type: "text",
+                  placeholder: "Other Income",
+                  name: "extra_income",
+                  onChange: handleTaxData
+                })]
+              })
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__.default, {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_7__.default, {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(Group, {
+                controlId: "total_invest",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(Label, {
+                  children: "Tax Rebatable Investment"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(Control, {
+                  type: "text",
+                  placeholder: "Total Investment",
+                  name: "total_invest",
+                  onChange: handleTaxData
+                })]
+              })
             })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__.default, {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(Group, {
-              controlId: "Occupation",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(Label, {
-                children: "Occupation"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(Control, {
-                type: "text",
-                placeholder: "Enter occupation",
-                name: "occupation",
-                onChange: handleTaxData
-              })]
-            })
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__.default, {
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__.default, {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(Group, {
-              controlId: "mobile_number",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(Label, {
-                children: "Mobile Number"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(Control, {
-                type: "text",
-                placeholder: "Enter Mobile Number",
-                name: "mobile_number",
-                onChange: handleTaxData
-              })]
-            })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__.default, {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(Group, {
-              controlId: "email",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(Label, {
-                children: "Email"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(Control, {
-                type: "text",
-                placeholder: "Enter email",
-                name: "email",
-                onChange: handleTaxData
-              })]
-            })
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__.default, {
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__.default, {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(Group, {
-              controlId: "age",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(Label, {
-                children: "Age"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(Control, {
-                type: "text",
-                placeholder: "Enter age",
-                name: "age",
-                onChange: handleTaxData
-              })]
-            })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__.default, {
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(Label, {
-              children: "Gender"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__.default.Check, {
-              inline: true,
-              label: "Male",
-              name: "gender",
-              type: "radio",
-              value: "m",
-              defaultChecked: true,
-              onChange: handleTaxData
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__.default.Check, {
-              inline: true,
-              label: "Female",
-              name: "gender",
-              type: "radio",
-              value: "f",
-              onChange: handleTaxData
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h4", {
+            children: "Other Eligibilities"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("hr", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__.default, {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_7__.default, {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(Group, {
+                controlId: "attain_transport",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(Check, {
+                  type: "switch",
+                  name: "attain_transport",
+                  checked: taxData.attain_transport,
+                  label: "Workplace Provides Transport",
+                  onChange: switchTaxData
+                })
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_7__.default, {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(Group, {
+                controlId: "in_city",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(Check, {
+                  type: "switch",
+                  name: "in_city",
+                  checked: taxData.in_city,
+                  label: "Resides in City",
+                  onChange: switchTaxData
+                })
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_7__.default, {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(Group, {
+                controlId: "ctg_or_dhaka",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(Check, {
+                  type: "switch",
+                  name: "ctg_or_dhaka",
+                  checked: taxData.ctg_or_dhaka,
+                  label: "Resides in CTG or Dhaka",
+                  onChange: switchTaxData
+                })
+              })
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__.default, {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_7__.default, {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(Group, {
+                controlId: "is_disabled",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(Check, {
+                  type: "switch",
+                  name: "is_disabled",
+                  checked: taxData.is_disabled,
+                  label: "Is Disabled",
+                  onChange: switchTaxData
+                })
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_7__.default, {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(Group, {
+                controlId: "is_freedom_fighter",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(Check, {
+                  type: "switch",
+                  name: "is_freedom_fighter",
+                  checked: taxData.is_freedom_fighter,
+                  label: "Is Freedom Fighter",
+                  onChange: switchTaxData
+                })
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_7__.default, {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(Group, {
+                controlId: "has_disabled_child",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(Check, {
+                  type: "switch",
+                  name: "has_disabled_child",
+                  checked: taxData.has_disabled_child,
+                  label: "Has Disabled Child & Facility not taken",
+                  onChange: switchTaxData
+                })
+              })
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__.default, {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_7__.default, {
+              className: "badge badge-info",
+              md: {
+                span: 8
+              },
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+                className: "text-capitalize font-weight-bold pt-2",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("span", {
+                  className: "btn btn-sm align-items-center",
+                  onClick: function onClick() {
+                    setOpenModal(true);
+                  },
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("strong", {
+                    children: ["Tax Amount: ", taxResponseData === null || taxResponseData === void 0 ? void 0 : taxResponseData.finalIncomeTax]
+                  }), " (Click here to show details)"]
+                })
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_7__.default, {
+              md: {
+                span: 2
+              },
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+                type: "submit",
+                className: "btn btn-primary float-right",
+                value: "Submit"
+              })
             })]
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h4", {
-          children: "Yearly Income & Investment"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("hr", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__.default, {
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__.default, {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(Group, {
-              controlId: "year_basic",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(Label, {
-                children: "Yearly Basic Salary"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(Control, {
-                type: "text",
-                placeholder: "Yearly Basic Salary",
-                name: "year_basic",
-                onChange: handleTaxData
-              })]
-            })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__.default, {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(Group, {
-              controlId: "year_transport",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(Label, {
-                children: "Yearly Transport Allowance"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(Control, {
-                type: "text",
-                placeholder: "Yearly Transport Allowance",
-                name: "year_transport",
-                onChange: handleTaxData
-              })]
-            })
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__.default, {
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__.default, {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(Group, {
-              controlId: "year_medical",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(Label, {
-                children: "Yearly Medical Allowance"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(Control, {
-                type: "text",
-                placeholder: "Yearly Medical Allowance",
-                name: "year_medical",
-                onChange: handleTaxData
-              })]
-            })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__.default, {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(Group, {
-              controlId: "year_house_rent",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(Label, {
-                children: "Yearly House Rent Allowance"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(Control, {
-                type: "text",
-                placeholder: "Yearly House Rent Allowance",
-                name: "year_house_rent",
-                onChange: handleTaxData
-              })]
-            })
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__.default, {
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__.default, {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(Group, {
-              controlId: "year_bonus",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(Label, {
-                children: "Yearly Bonus"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(Control, {
-                type: "text",
-                placeholder: "Yearly Bonus",
-                name: "year_bonus",
-                onChange: handleTaxData
-              })]
-            })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__.default, {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(Group, {
-              controlId: "extra_income",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(Label, {
-                children: "Other Income"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(Control, {
-                type: "text",
-                placeholder: "Other Income",
-                name: "extra_income",
-                onChange: handleTaxData
-              })]
-            })
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__.default, {
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__.default, {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(Group, {
-              controlId: "total_invest",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(Label, {
-                children: "Tax Rebatable Investment"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(Control, {
-                type: "text",
-                placeholder: "Total Investment",
-                name: "total_invest",
-                onChange: handleTaxData
-              })]
-            })
-          })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h4", {
-          children: "Other Eligibilities"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("hr", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__.default, {
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__.default, {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(Group, {
-              controlId: "attain_transport",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(Check, {
-                type: "switch",
-                name: "attain_transport",
-                checked: taxData.attain_transport,
-                label: "Workplace Provides Transport",
-                onChange: switchTaxData
-              })
-            })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__.default, {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(Group, {
-              controlId: "in_city",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(Check, {
-                type: "switch",
-                name: "in_city",
-                checked: taxData.in_city,
-                label: "Resides in City",
-                onChange: switchTaxData
-              })
-            })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__.default, {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(Group, {
-              controlId: "ctg_or_dhaka",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(Check, {
-                type: "switch",
-                name: "ctg_or_dhaka",
-                checked: taxData.ctg_or_dhaka,
-                label: "Resides in CTG or Dhaka",
-                onChange: switchTaxData
-              })
-            })
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__.default, {
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__.default, {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(Group, {
-              controlId: "is_disabled",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(Check, {
-                type: "switch",
-                name: "is_disabled",
-                checked: taxData.is_disabled,
-                label: "Is Disabled",
-                onChange: switchTaxData
-              })
-            })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__.default, {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(Group, {
-              controlId: "is_freedom_fighter",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(Check, {
-                type: "switch",
-                name: "is_freedom_fighter",
-                checked: taxData.is_freedom_fighter,
-                label: "Is Freedom Fighter",
-                onChange: switchTaxData
-              })
-            })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__.default, {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(Group, {
-              controlId: "has_disabled_child",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(Check, {
-                type: "switch",
-                name: "has_disabled_child",
-                checked: taxData.has_disabled_child,
-                label: "Has Disabled Child & Facility not taken",
-                onChange: switchTaxData
-              })
-            })
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__.default, {
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__.default, {
-            className: "badge badge-info",
-            md: {
-              span: 8
-            },
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-              className: "text-capitalize font-weight-bold pt-2",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("span", {
-                className: "btn btn-sm align-items-center",
-                onClick: function onClick() {
-                  setOpenModal(true);
-                },
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("strong", {
-                  children: ["Tax Amount: ", taxResponseData.finalIncomeTax]
-                }), " (Click here to show details)"]
-              })
-            })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__.default, {
-            md: {
-              span: 2
-            },
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
-              type: "submit",
-              className: "btn btn-primary float-right",
-              value: "Submit"
-            })
-          })]
-        })]
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+        className: "card-footer text-center bg-secondary font-weight-lighter text-white",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("small", {
+          children: "2021 \xA9 TAX calculator - All rights reserved. It is Powered by TAX Calculator Ltd."
+        })
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-      className: "card-footer text-center bg-secondary font-weight-lighter text-white",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("small", {
-        children: "2021 \xA9 TAX calculator - All rights reserved. It is Powered by TAX Calculator Ltd."
-      })
     })]
   });
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TaxForm);
-
-/***/ }),
-
-/***/ "./node_modules/body-scroll-lock/lib/bodyScrollLock.esm.js":
-/*!*****************************************************************!*\
-  !*** ./node_modules/body-scroll-lock/lib/bodyScrollLock.esm.js ***!
-  \*****************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "disableBodyScroll": () => (/* binding */ disableBodyScroll),
-/* harmony export */   "clearAllBodyScrollLocks": () => (/* binding */ clearAllBodyScrollLocks),
-/* harmony export */   "enableBodyScroll": () => (/* binding */ enableBodyScroll)
-/* harmony export */ });
-function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
-
-// Older browsers don't support event options, feature detect it.
-
-// Adopted and modified solution from Bohdan Didukh (2017)
-// https://stackoverflow.com/questions/41594997/ios-10-safari-prevent-scrolling-behind-a-fixed-overlay-and-maintain-scroll-posi
-
-var hasPassiveEvents = false;
-if (typeof window !== 'undefined') {
-  var passiveTestOptions = {
-    get passive() {
-      hasPassiveEvents = true;
-      return undefined;
-    }
-  };
-  window.addEventListener('testPassive', null, passiveTestOptions);
-  window.removeEventListener('testPassive', null, passiveTestOptions);
-}
-
-var isIosDevice = typeof window !== 'undefined' && window.navigator && window.navigator.platform && (/iP(ad|hone|od)/.test(window.navigator.platform) || window.navigator.platform === 'MacIntel' && window.navigator.maxTouchPoints > 1);
-
-
-var locks = [];
-var documentListenerAdded = false;
-var initialClientY = -1;
-var previousBodyOverflowSetting = void 0;
-var previousBodyPaddingRight = void 0;
-
-// returns true if `el` should be allowed to receive touchmove events.
-var allowTouchMove = function allowTouchMove(el) {
-  return locks.some(function (lock) {
-    if (lock.options.allowTouchMove && lock.options.allowTouchMove(el)) {
-      return true;
-    }
-
-    return false;
-  });
-};
-
-var preventDefault = function preventDefault(rawEvent) {
-  var e = rawEvent || window.event;
-
-  // For the case whereby consumers adds a touchmove event listener to document.
-  // Recall that we do document.addEventListener('touchmove', preventDefault, { passive: false })
-  // in disableBodyScroll - so if we provide this opportunity to allowTouchMove, then
-  // the touchmove event on document will break.
-  if (allowTouchMove(e.target)) {
-    return true;
-  }
-
-  // Do not prevent if the event has more than one touch (usually meaning this is a multi touch gesture like pinch to zoom).
-  if (e.touches.length > 1) return true;
-
-  if (e.preventDefault) e.preventDefault();
-
-  return false;
-};
-
-var setOverflowHidden = function setOverflowHidden(options) {
-  // If previousBodyPaddingRight is already set, don't set it again.
-  if (previousBodyPaddingRight === undefined) {
-    var _reserveScrollBarGap = !!options && options.reserveScrollBarGap === true;
-    var scrollBarGap = window.innerWidth - document.documentElement.clientWidth;
-
-    if (_reserveScrollBarGap && scrollBarGap > 0) {
-      previousBodyPaddingRight = document.body.style.paddingRight;
-      document.body.style.paddingRight = scrollBarGap + 'px';
-    }
-  }
-
-  // If previousBodyOverflowSetting is already set, don't set it again.
-  if (previousBodyOverflowSetting === undefined) {
-    previousBodyOverflowSetting = document.body.style.overflow;
-    document.body.style.overflow = 'hidden';
-  }
-};
-
-var restoreOverflowSetting = function restoreOverflowSetting() {
-  if (previousBodyPaddingRight !== undefined) {
-    document.body.style.paddingRight = previousBodyPaddingRight;
-
-    // Restore previousBodyPaddingRight to undefined so setOverflowHidden knows it
-    // can be set again.
-    previousBodyPaddingRight = undefined;
-  }
-
-  if (previousBodyOverflowSetting !== undefined) {
-    document.body.style.overflow = previousBodyOverflowSetting;
-
-    // Restore previousBodyOverflowSetting to undefined
-    // so setOverflowHidden knows it can be set again.
-    previousBodyOverflowSetting = undefined;
-  }
-};
-
-// https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollHeight#Problems_and_solutions
-var isTargetElementTotallyScrolled = function isTargetElementTotallyScrolled(targetElement) {
-  return targetElement ? targetElement.scrollHeight - targetElement.scrollTop <= targetElement.clientHeight : false;
-};
-
-var handleScroll = function handleScroll(event, targetElement) {
-  var clientY = event.targetTouches[0].clientY - initialClientY;
-
-  if (allowTouchMove(event.target)) {
-    return false;
-  }
-
-  if (targetElement && targetElement.scrollTop === 0 && clientY > 0) {
-    // element is at the top of its scroll.
-    return preventDefault(event);
-  }
-
-  if (isTargetElementTotallyScrolled(targetElement) && clientY < 0) {
-    // element is at the bottom of its scroll.
-    return preventDefault(event);
-  }
-
-  event.stopPropagation();
-  return true;
-};
-
-var disableBodyScroll = function disableBodyScroll(targetElement, options) {
-  // targetElement must be provided
-  if (!targetElement) {
-    // eslint-disable-next-line no-console
-    console.error('disableBodyScroll unsuccessful - targetElement must be provided when calling disableBodyScroll on IOS devices.');
-    return;
-  }
-
-  // disableBodyScroll must not have been called on this targetElement before
-  if (locks.some(function (lock) {
-    return lock.targetElement === targetElement;
-  })) {
-    return;
-  }
-
-  var lock = {
-    targetElement: targetElement,
-    options: options || {}
-  };
-
-  locks = [].concat(_toConsumableArray(locks), [lock]);
-
-  if (isIosDevice) {
-    targetElement.ontouchstart = function (event) {
-      if (event.targetTouches.length === 1) {
-        // detect single touch.
-        initialClientY = event.targetTouches[0].clientY;
-      }
-    };
-    targetElement.ontouchmove = function (event) {
-      if (event.targetTouches.length === 1) {
-        // detect single touch.
-        handleScroll(event, targetElement);
-      }
-    };
-
-    if (!documentListenerAdded) {
-      document.addEventListener('touchmove', preventDefault, hasPassiveEvents ? { passive: false } : undefined);
-      documentListenerAdded = true;
-    }
-  } else {
-    setOverflowHidden(options);
-  }
-};
-
-var clearAllBodyScrollLocks = function clearAllBodyScrollLocks() {
-  if (isIosDevice) {
-    // Clear all locks ontouchstart/ontouchmove handlers, and the references.
-    locks.forEach(function (lock) {
-      lock.targetElement.ontouchstart = null;
-      lock.targetElement.ontouchmove = null;
-    });
-
-    if (documentListenerAdded) {
-      document.removeEventListener('touchmove', preventDefault, hasPassiveEvents ? { passive: false } : undefined);
-      documentListenerAdded = false;
-    }
-
-    // Reset initial clientY.
-    initialClientY = -1;
-  } else {
-    restoreOverflowSetting();
-  }
-
-  locks = [];
-};
-
-var enableBodyScroll = function enableBodyScroll(targetElement) {
-  if (!targetElement) {
-    // eslint-disable-next-line no-console
-    console.error('enableBodyScroll unsuccessful - targetElement must be provided when calling enableBodyScroll on IOS devices.');
-    return;
-  }
-
-  locks = locks.filter(function (lock) {
-    return lock.targetElement !== targetElement;
-  });
-
-  if (isIosDevice) {
-    targetElement.ontouchstart = null;
-    targetElement.ontouchmove = null;
-
-    if (documentListenerAdded && locks.length === 0) {
-      document.removeEventListener('touchmove', preventDefault, hasPassiveEvents ? { passive: false } : undefined);
-      documentListenerAdded = false;
-    }
-  } else if (!locks.length) {
-    restoreOverflowSetting();
-  }
-};
-
-
 
 /***/ }),
 
@@ -80369,489 +80112,6 @@ function useWaitForDOMRef(ref, onResolved) {
   }, [ref, resolvedRef]);
   return resolvedRef;
 }
-
-/***/ }),
-
-/***/ "./node_modules/react-responsive-modal/dist/react-responsive-modal.esm.js":
-/*!********************************************************************************!*\
-  !*** ./node_modules/react-responsive-modal/dist/react-responsive-modal.esm.js ***!
-  \********************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
-/* harmony export */   "Modal": () => (/* binding */ Modal)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
-/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
-/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var body_scroll_lock__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! body-scroll-lock */ "./node_modules/body-scroll-lock/lib/bodyScrollLock.esm.js");
-/* harmony import */ var _bedrock_layout_use_forwarded_ref__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @bedrock-layout/use-forwarded-ref */ "./node_modules/@bedrock-layout/use-forwarded-ref/lib/index.m.js");
-/* provided dependency */ var process = __webpack_require__(/*! process/browser */ "./node_modules/process/browser.js");
-
-
-
-
-
-
-function _extends() {
-  _extends = Object.assign || function (target) {
-    for (var i = 1; i < arguments.length; i++) {
-      var source = arguments[i];
-
-      for (var key in source) {
-        if (Object.prototype.hasOwnProperty.call(source, key)) {
-          target[key] = source[key];
-        }
-      }
-    }
-
-    return target;
-  };
-
-  return _extends.apply(this, arguments);
-}
-
-var CloseIcon = function CloseIcon(_ref) {
-  var classes = _ref.classes,
-      classNames = _ref.classNames,
-      styles = _ref.styles,
-      id = _ref.id,
-      closeIcon = _ref.closeIcon,
-      onClick = _ref.onClick;
-  return react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
-    id: id,
-    className: classnames__WEBPACK_IMPORTED_MODULE_2___default()(classes.closeButton, classNames == null ? void 0 : classNames.closeButton),
-    style: styles == null ? void 0 : styles.closeButton,
-    onClick: onClick,
-    "data-testid": "close-button"
-  }, closeIcon ? closeIcon : react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", {
-    className: classNames == null ? void 0 : classNames.closeIcon,
-    style: styles == null ? void 0 : styles.closeIcon,
-    width: 28,
-    height: 28,
-    viewBox: "0 0 36 36",
-    "data-testid": "close-icon"
-  }, react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
-    d: "M28.5 9.62L26.38 7.5 18 15.88 9.62 7.5 7.5 9.62 15.88 18 7.5 26.38l2.12 2.12L18 20.12l8.38 8.38 2.12-2.12L20.12 18z"
-  })));
-};
-
-var isBrowser = typeof window !== 'undefined';
-
-// https://github.com/alexandrzavalii/focus-trap-js/blob/master/src/index.js v1.1.0
-var candidateSelectors = ['input', 'select', 'textarea', 'a[href]', 'button', '[tabindex]', 'audio[controls]', 'video[controls]', '[contenteditable]:not([contenteditable="false"])'];
-
-function isHidden(node) {
-  // offsetParent being null will allow detecting cases where an element is invisible or inside an invisible element,
-  // as long as the element does not use position: fixed. For them, their visibility has to be checked directly as well.
-  return node.offsetParent === null || getComputedStyle(node).visibility === 'hidden';
-}
-
-function getCheckedRadio(nodes, form) {
-  for (var i = 0; i < nodes.length; i++) {
-    if (nodes[i].checked && nodes[i].form === form) {
-      return nodes[i];
-    }
-  }
-}
-
-function isNotRadioOrTabbableRadio(node) {
-  if (node.tagName !== 'INPUT' || node.type !== 'radio' || !node.name) {
-    return true;
-  }
-
-  var radioScope = node.form || node.ownerDocument;
-  var radioSet = radioScope.querySelectorAll('input[type="radio"][name="' + node.name + '"]');
-  var checked = getCheckedRadio(radioSet, node.form);
-  return checked === node || checked === undefined && radioSet[0] === node;
-}
-
-function getAllTabbingElements(parentElem) {
-  var currentActiveElement = document.activeElement;
-  var tabbableNodes = parentElem.querySelectorAll(candidateSelectors.join(','));
-  var onlyTabbable = [];
-
-  for (var i = 0; i < tabbableNodes.length; i++) {
-    var node = tabbableNodes[i];
-
-    if (currentActiveElement === node || !node.disabled && getTabindex(node) > -1 && !isHidden(node) && isNotRadioOrTabbableRadio(node)) {
-      onlyTabbable.push(node);
-    }
-  }
-
-  return onlyTabbable;
-}
-function tabTrappingKey(event, parentElem) {
-  // check if current event keyCode is tab
-  if (!event || event.key !== 'Tab') return;
-
-  if (!parentElem || !parentElem.contains) {
-    if (process && "development" === 'development') {
-      console.warn('focus-trap-js: parent element is not defined');
-    }
-
-    return false;
-  }
-
-  if (!parentElem.contains(event.target)) {
-    return false;
-  }
-
-  var allTabbingElements = getAllTabbingElements(parentElem);
-  var firstFocusableElement = allTabbingElements[0];
-  var lastFocusableElement = allTabbingElements[allTabbingElements.length - 1];
-
-  if (event.shiftKey && event.target === firstFocusableElement) {
-    lastFocusableElement.focus();
-    event.preventDefault();
-    return true;
-  } else if (!event.shiftKey && event.target === lastFocusableElement) {
-    firstFocusableElement.focus();
-    event.preventDefault();
-    return true;
-  }
-
-  return false;
-}
-
-function getTabindex(node) {
-  var tabindexAttr = parseInt(node.getAttribute('tabindex'), 10);
-  if (!isNaN(tabindexAttr)) return tabindexAttr; // Browsers do not return tabIndex correctly for contentEditable nodes;
-  // so if they don't have a tabindex attribute specifically set, assume it's 0.
-
-  if (isContentEditable(node)) return 0;
-  return node.tabIndex;
-}
-
-function isContentEditable(node) {
-  return node.getAttribute('contentEditable');
-}
-
-var FocusTrap = function FocusTrap(_ref) {
-  var container = _ref.container,
-      initialFocusRef = _ref.initialFocusRef;
-  var refLastFocus = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)();
-  /**
-   * Handle focus lock on the modal
-   */
-
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    var handleKeyEvent = function handleKeyEvent(event) {
-      if (container == null ? void 0 : container.current) {
-        tabTrappingKey(event, container.current);
-      }
-    };
-
-    if (isBrowser) {
-      document.addEventListener('keydown', handleKeyEvent);
-    } // On mount we focus on the first focusable element in the modal if there is one
-
-
-    if (isBrowser && (container == null ? void 0 : container.current)) {
-      var savePreviousFocus = function savePreviousFocus() {
-        // First we save the last focused element
-        // only if it's a focusable element
-        if (candidateSelectors.findIndex(function (selector) {
-          var _document$activeEleme;
-
-          return (_document$activeEleme = document.activeElement) == null ? void 0 : _document$activeEleme.matches(selector);
-        }) !== -1) {
-          refLastFocus.current = document.activeElement;
-        }
-      };
-
-      if (initialFocusRef) {
-        savePreviousFocus(); // We need to schedule focusing on a next frame - this allows to focus on the modal root
-
-        requestAnimationFrame(function () {
-          var _initialFocusRef$curr;
-
-          (_initialFocusRef$curr = initialFocusRef.current) == null ? void 0 : _initialFocusRef$curr.focus();
-        });
-      } else {
-        var allTabbingElements = getAllTabbingElements(container.current);
-
-        if (allTabbingElements[0]) {
-          savePreviousFocus();
-          allTabbingElements[0].focus();
-        }
-      }
-    }
-
-    return function () {
-      if (isBrowser) {
-        var _refLastFocus$current;
-
-        document.removeEventListener('keydown', handleKeyEvent); // On unmount we restore the focus to the last focused element
-
-        (_refLastFocus$current = refLastFocus.current) == null ? void 0 : _refLastFocus$current.focus();
-      }
-    };
-  }, [container, initialFocusRef]);
-  return null;
-};
-
-var modals = [];
-/**
- * Handle the order of the modals.
- * Inspired by the material-ui implementation.
- */
-
-var modalManager = {
-  /**
-   * Register a new modal
-   */
-  add: function add(newModal) {
-    modals.push(newModal);
-  },
-
-  /**
-   * Remove a modal
-   */
-  remove: function remove(oldModal) {
-    modals = modals.filter(function (modal) {
-      return modal !== oldModal;
-    });
-  },
-
-  /**
-   * When multiple modals are rendered will return true if current modal is the last one
-   */
-  isTopModal: function isTopModal(modal) {
-    return !!modals.length && modals[modals.length - 1] === modal;
-  }
-};
-function useModalManager(ref, open) {
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    if (open) {
-      modalManager.add(ref);
-    }
-
-    return function () {
-      modalManager.remove(ref);
-    };
-  }, [open, ref]);
-}
-
-var useScrollLock = function useScrollLock(refModal, open, showPortal, blockScroll) {
-  var oldRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    if (open && refModal.current && blockScroll) {
-      oldRef.current = refModal.current;
-      (0,body_scroll_lock__WEBPACK_IMPORTED_MODULE_3__.disableBodyScroll)(refModal.current);
-    }
-
-    return function () {
-      if (oldRef.current) {
-        (0,body_scroll_lock__WEBPACK_IMPORTED_MODULE_3__.enableBodyScroll)(oldRef.current);
-        oldRef.current = null;
-      }
-    };
-  }, [open, showPortal, refModal]);
-};
-
-var classes = {
-  root: 'react-responsive-modal-root',
-  overlay: 'react-responsive-modal-overlay',
-  overlayAnimationIn: 'react-responsive-modal-overlay-in',
-  overlayAnimationOut: 'react-responsive-modal-overlay-out',
-  modalContainer: 'react-responsive-modal-container',
-  modalContainerCenter: 'react-responsive-modal-containerCenter',
-  modal: 'react-responsive-modal-modal',
-  modalAnimationIn: 'react-responsive-modal-modal-in',
-  modalAnimationOut: 'react-responsive-modal-modal-out',
-  closeButton: 'react-responsive-modal-closeButton'
-};
-var Modal = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.forwardRef(function (_ref, ref) {
-  var _classNames$overlayAn, _classNames$overlayAn2, _classNames$modalAnim, _classNames$modalAnim2;
-
-  var open = _ref.open,
-      center = _ref.center,
-      _ref$blockScroll = _ref.blockScroll,
-      blockScroll = _ref$blockScroll === void 0 ? true : _ref$blockScroll,
-      _ref$closeOnEsc = _ref.closeOnEsc,
-      closeOnEsc = _ref$closeOnEsc === void 0 ? true : _ref$closeOnEsc,
-      _ref$closeOnOverlayCl = _ref.closeOnOverlayClick,
-      closeOnOverlayClick = _ref$closeOnOverlayCl === void 0 ? true : _ref$closeOnOverlayCl,
-      container = _ref.container,
-      _ref$showCloseIcon = _ref.showCloseIcon,
-      showCloseIcon = _ref$showCloseIcon === void 0 ? true : _ref$showCloseIcon,
-      closeIconId = _ref.closeIconId,
-      closeIcon = _ref.closeIcon,
-      _ref$focusTrapped = _ref.focusTrapped,
-      focusTrapped = _ref$focusTrapped === void 0 ? true : _ref$focusTrapped,
-      _ref$initialFocusRef = _ref.initialFocusRef,
-      initialFocusRef = _ref$initialFocusRef === void 0 ? undefined : _ref$initialFocusRef,
-      _ref$animationDuratio = _ref.animationDuration,
-      animationDuration = _ref$animationDuratio === void 0 ? 300 : _ref$animationDuratio,
-      classNames = _ref.classNames,
-      styles = _ref.styles,
-      _ref$role = _ref.role,
-      role = _ref$role === void 0 ? 'dialog' : _ref$role,
-      ariaDescribedby = _ref.ariaDescribedby,
-      ariaLabelledby = _ref.ariaLabelledby,
-      modalId = _ref.modalId,
-      onClose = _ref.onClose,
-      onEscKeyDown = _ref.onEscKeyDown,
-      onOverlayClick = _ref.onOverlayClick,
-      onAnimationEnd = _ref.onAnimationEnd,
-      children = _ref.children;
-  var refDialog = (0,_bedrock_layout_use_forwarded_ref__WEBPACK_IMPORTED_MODULE_4__.default)(ref);
-  var refModal = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
-  var refShouldClose = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
-  var refContainer = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null); // Lazily create the ref instance
-  // https://reactjs.org/docs/hooks-faq.html#how-to-create-expensive-objects-lazily
-
-  if (refContainer.current === null && isBrowser) {
-    refContainer.current = document.createElement('div');
-  } // The value should be false for srr, that way when the component is hydrated client side,
-  // it will match the server rendered content
-
-
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
-      showPortal = _useState[0],
-      setShowPortal = _useState[1]; // Hook used to manage multiple modals opened at the same time
-
-
-  useModalManager(refModal, open); // Hook used to manage the scroll
-
-  useScrollLock(refModal, open, showPortal, blockScroll);
-
-  var handleOpen = function handleOpen() {
-    if (refContainer.current && !container && !document.body.contains(refContainer.current)) {
-      document.body.appendChild(refContainer.current);
-    }
-
-    document.addEventListener('keydown', handleKeydown);
-  };
-
-  var handleClose = function handleClose() {
-    if (refContainer.current && !container && document.body.contains(refContainer.current)) {
-      document.body.removeChild(refContainer.current);
-    }
-
-    document.removeEventListener('keydown', handleKeydown);
-  };
-
-  var handleKeydown = function handleKeydown(event) {
-    // Only the last modal need to be escaped when pressing the esc key
-    if (event.keyCode !== 27 || !modalManager.isTopModal(refModal)) {
-      return;
-    }
-
-    onEscKeyDown == null ? void 0 : onEscKeyDown(event);
-
-    if (closeOnEsc) {
-      onClose();
-    }
-  };
-
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    return function () {
-      if (showPortal) {
-        // When the modal is closed or removed directly, cleanup the listeners
-        handleClose();
-      }
-    };
-  }, [showPortal]);
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    // If the open prop is changing, we need to open the modal
-    // This is also called on the first render if the open prop is true when the modal is created
-    if (open && !showPortal) {
-      setShowPortal(true);
-      handleOpen();
-    }
-  }, [open]);
-
-  var handleClickOverlay = function handleClickOverlay(event) {
-    if (refShouldClose.current === null) {
-      refShouldClose.current = true;
-    }
-
-    if (!refShouldClose.current) {
-      refShouldClose.current = null;
-      return;
-    }
-
-    onOverlayClick == null ? void 0 : onOverlayClick(event);
-
-    if (closeOnOverlayClick) {
-      onClose();
-    }
-
-    refShouldClose.current = null;
-  };
-
-  var handleModalEvent = function handleModalEvent() {
-    refShouldClose.current = false;
-  };
-
-  var handleAnimationEnd = function handleAnimationEnd() {
-    if (!open) {
-      setShowPortal(false);
-    }
-
-    onAnimationEnd == null ? void 0 : onAnimationEnd();
-  };
-
-  var containerModal = container || refContainer.current;
-  var overlayAnimation = open ? (_classNames$overlayAn = classNames == null ? void 0 : classNames.overlayAnimationIn) != null ? _classNames$overlayAn : classes.overlayAnimationIn : (_classNames$overlayAn2 = classNames == null ? void 0 : classNames.overlayAnimationOut) != null ? _classNames$overlayAn2 : classes.overlayAnimationOut;
-  var modalAnimation = open ? (_classNames$modalAnim = classNames == null ? void 0 : classNames.modalAnimationIn) != null ? _classNames$modalAnim : classes.modalAnimationIn : (_classNames$modalAnim2 = classNames == null ? void 0 : classNames.modalAnimationOut) != null ? _classNames$modalAnim2 : classes.modalAnimationOut;
-  return showPortal && containerModal ? react_dom__WEBPACK_IMPORTED_MODULE_1__.createPortal(react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: classnames__WEBPACK_IMPORTED_MODULE_2___default()(classes.root, classNames == null ? void 0 : classNames.root),
-    style: styles == null ? void 0 : styles.root,
-    "data-testid": "root"
-  }, react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: classnames__WEBPACK_IMPORTED_MODULE_2___default()(classes.overlay, classNames == null ? void 0 : classNames.overlay),
-    "data-testid": "overlay",
-    "aria-hidden": true,
-    style: _extends({
-      animation: overlayAnimation + " " + animationDuration + "ms"
-    }, styles == null ? void 0 : styles.overlay)
-  }), react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    ref: refModal,
-    className: classnames__WEBPACK_IMPORTED_MODULE_2___default()(classes.modalContainer, center && classes.modalContainerCenter, classNames == null ? void 0 : classNames.modalContainer),
-    style: styles == null ? void 0 : styles.modalContainer,
-    "data-testid": "modal-container",
-    onClick: handleClickOverlay
-  }, react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    ref: refDialog,
-    className: classnames__WEBPACK_IMPORTED_MODULE_2___default()(classes.modal, classNames == null ? void 0 : classNames.modal),
-    style: _extends({
-      animation: modalAnimation + " " + animationDuration + "ms"
-    }, styles == null ? void 0 : styles.modal),
-    onMouseDown: handleModalEvent,
-    onMouseUp: handleModalEvent,
-    onClick: handleModalEvent,
-    onAnimationEnd: handleAnimationEnd,
-    id: modalId,
-    role: role,
-    "aria-modal": "true",
-    "aria-labelledby": ariaLabelledby,
-    "aria-describedby": ariaDescribedby,
-    "data-testid": "modal",
-    tabIndex: -1
-  }, focusTrapped && react__WEBPACK_IMPORTED_MODULE_0__.createElement(FocusTrap, {
-    container: refDialog,
-    initialFocusRef: initialFocusRef
-  }), children, showCloseIcon && react__WEBPACK_IMPORTED_MODULE_0__.createElement(CloseIcon, {
-    classes: classes,
-    classNames: classNames,
-    styles: styles,
-    closeIcon: closeIcon,
-    onClick: onClose,
-    id: closeIconId
-  })))), containerModal) : null;
-});
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Modal);
-
-//# sourceMappingURL=react-responsive-modal.esm.js.map
-
 
 /***/ }),
 
