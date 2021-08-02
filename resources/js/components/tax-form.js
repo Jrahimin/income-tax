@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {Col, Form, Row, ListGroup, Modal, Button} from "react-bootstrap";
+import {Col, Form, Row, ListGroup, Modal, Button, Alert} from "react-bootstrap";
 
 const {
     Group,
@@ -42,6 +42,7 @@ const TaxForm = (props) => {
     });
 
     const [openModal, setOpenModal] = useState(false)
+    const [errorMessage, setErrorMessage] = useState(undefined)
 
     const handleTaxData = (e) => {
         const propertyName = e.target.name
@@ -68,6 +69,7 @@ const TaxForm = (props) => {
         taxData[propertyName] = !taxData[propertyName];
 
         setTaxData({...taxData});
+        setErrorMessage(undefined);
     }
 
     useEffect(() => {
@@ -77,10 +79,14 @@ const TaxForm = (props) => {
     const submit = (e) => {
         e.preventDefault();
 
-        axios.post('api/tax-calculate', taxData).then(response => {
-            console.log('response', response.data);
-            setTaxResponseData(response.data.data);
-            setOpenModal(true);
+        axios.post('api/tax-calculate', taxData).then(r => r.data).then(response => {
+            if (response.code === 200) {
+                setTaxResponseData(response.data);
+                setOpenModal(true);
+            } else {
+                setErrorMessage(response.message);
+                setOpenModal(false);
+            }
         }).catch(error => {
             console.error('There was an error!', error);
         });
@@ -115,6 +121,11 @@ const TaxForm = (props) => {
 
             <div className="card">
                 <div className="card-header text-center bg-info font-weight-bold">Calculate Income TAX</div>
+                {errorMessage && <div style={{margin:'10px'}}>
+                    <Alert variant={'danger'} dismissible onClose={() => setErrorMessage(undefined)}>
+                        {errorMessage}
+                    </Alert>
+                </div>}
                 <div className="card-body">
                     <Form onSubmit={submit}>
                         <h4>Personal Info</h4>
