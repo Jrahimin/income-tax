@@ -29,4 +29,18 @@ class TaxCalculateRequest extends BaseFormRequest
             "has_disabled_child" => 'required',
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'year_basic.required' => 'Yearly Basic is required',
+            'year_basic.numeric' => 'Yearly Basic amount must be a number',
+            'year_house_rent.numeric' => 'Yearly House Rent must be a number',
+            'year_medical.numeric' => 'Yearly Medical allowance must be a number',
+            'year_transport.numeric' => 'Yearly Conveyance must be a number',
+            'year_bonus.numeric' => 'Yearly Bonus must be a number',
+            'extra_income.numeric' => 'Other Income amount must be a number',
+            'total_invest.numeric' => 'Total Investment amount must be a number',
+        ];
+    }
 }

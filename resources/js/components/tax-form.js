@@ -1,5 +1,5 @@
-import React, {useState, useEffect} from 'react';
-import {Col, Form, Row, ListGroup, Modal, Button, Alert} from "react-bootstrap";
+import React, {useState} from 'react';
+import {Col, Form, Row, ListGroup, Modal, Button, Alert, Toast} from "react-bootstrap";
 
 const {
     Group,
@@ -15,7 +15,6 @@ const TaxForm = (props) => {
         "mobile_number": "",
         "age": undefined,
         "gender": "m",
-
 
         "year_basic": 0,
         "year_bonus": 0,
@@ -42,7 +41,7 @@ const TaxForm = (props) => {
     });
 
     const [openModal, setOpenModal] = useState(false)
-    const [errorMessage, setErrorMessage] = useState(undefined)
+    const [errorMessage, setErrorMessage] = useState(false)
 
     const handleTaxData = (e) => {
         const propertyName = e.target.name
@@ -56,7 +55,6 @@ const TaxForm = (props) => {
     }
 
     const onCloseModal = () => {
-        console.log("in close modal");
         setOpenModal(false);
     }
 
@@ -69,18 +67,14 @@ const TaxForm = (props) => {
         taxData[propertyName] = !taxData[propertyName];
 
         setTaxData({...taxData});
-        setErrorMessage(undefined);
     }
-
-    useEffect(() => {
-        console.log('in useEffect: taxData', taxData)
-    }, [taxData]);
 
     const submit = (e) => {
         e.preventDefault();
 
         axios.post('api/tax-calculate', taxData).then(r => r.data).then(response => {
             if (response.code === 200) {
+                setErrorMessage(false);
                 setTaxResponseData(response.data);
                 setOpenModal(true);
             } else {
@@ -109,7 +103,7 @@ const TaxForm = (props) => {
                         <ListGroup.Item>Tax on Payable
                             Amount: {taxResponseData?.taxOnPayableAmount || 0} BDT</ListGroup.Item>
                         <ListGroup.Item>Rebate: {taxResponseData?.taxRebateAmount || 0} BDT</ListGroup.Item>
-                        <ListGroup.Item>Final Income Tax: {taxResponseData?.finalIncomeTax || 0} BDT</ListGroup.Item>
+                        <ListGroup.Item className="text-success">Final Income Tax: {taxResponseData?.finalIncomeTax || 0} BDT</ListGroup.Item>
                     </ListGroup>
                 </Modal.Body>
                 <Modal.Footer>
@@ -121,11 +115,6 @@ const TaxForm = (props) => {
 
             <div className="card">
                 <div className="card-header text-center bg-info font-weight-bold">Calculate Income TAX</div>
-                {errorMessage && <div style={{margin:'10px'}}>
-                    <Alert variant={'danger'} dismissible onClose={() => setErrorMessage(undefined)}>
-                        {errorMessage}
-                    </Alert>
-                </div>}
                 <div className="card-body">
                     <Form onSubmit={submit}>
                         <h4>Personal Info</h4>
@@ -133,7 +122,7 @@ const TaxForm = (props) => {
                         <Row>
                             <Col>
                                 <Group controlId="name">
-                                    <Label>Name*</Label>
+                                    <Label className="text-danger">Name*</Label>
                                     <Control type="text" placeholder="Enter full name" name="name" required
                                              onChange={handleTaxData}/>
                                 </Group>
@@ -165,8 +154,8 @@ const TaxForm = (props) => {
                         <Row>
                             <Col>
                                 <Group controlId="age">
-                                    <Label>Age</Label>
-                                    <Control type="text" placeholder="Enter age" name="age" onChange={handleTaxData}/>
+                                    <Label className="text-danger">Age*</Label>
+                                    <Control type="text" placeholder="Enter age" name="age" onChange={handleTaxData} required/>
                                 </Group>
                             </Col>
                             <Col>
@@ -185,8 +174,8 @@ const TaxForm = (props) => {
                         <Row>
                             <Col>
                                 <Group controlId="year_basic">
-                                    <Label>Yearly Basic Salary</Label>
-                                    <Control type="text" placeholder="Yearly Basic Salary" name="year_basic"
+                                    <Label className="text-danger">Yearly Basic Salary*</Label>
+                                    <Control type="text" placeholder="Yearly Basic Salary" name="year_basic" required
                                              onChange={handleTaxData}/>
                                 </Group>
                             </Col>
@@ -284,16 +273,14 @@ const TaxForm = (props) => {
                             </Col>
                         </Row>
                         <hr/>
+
+                        {errorMessage && <div style={{margin:'10px'}}>
+                            <Alert variant={'danger'} dismissible onClose={() => setErrorMessage(false)}>
+                                {errorMessage}
+                            </Alert>
+                        </div>}
+
                         <Row>
-                            {/*<Col className="badge badge-info" md={{span: 8}}>*/}
-                            {/*    <div className="text-capitalize font-weight-bold pt-2">*/}
-                            {/*        <span className="btn btn-sm align-items-center" onClick={() => {*/}
-                            {/*            setOpenModal(true)*/}
-                            {/*        }}>*/}
-                            {/*            <strong>Tax Amount: {taxResponseData?.finalIncomeTax}</strong> (Click here to show details)*/}
-                            {/*        </span>*/}
-                            {/*    </div>*/}
-                            {/*</Col>*/}
                             <Col md={{span: 4, offset: 4}}>
                                 <Button type="submit" className="btn btn-info w-100 p-2"
                                         style={{color: 'black'}}><strong>Calculate</strong></Button>

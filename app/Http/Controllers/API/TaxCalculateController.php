@@ -31,7 +31,6 @@ class TaxCalculateController extends Controller
             // TODO need to about provident fund
 
             $request['request_data'] = json_encode($request->all());
-            $taxInfoDb = TaxInfo::create($request->all());
 
             // Taxable income Calculation
             $houseRentTaxable = $this->getHouseRentTaxableAmount($request->year_house_rent);
@@ -71,7 +70,7 @@ class TaxCalculateController extends Controller
                 "finalIncomeTax" => $finalTaxAmount
             );
 
-            $taxInfoDb->update([
+            $request->merge([
                 'total_taxable_income'     => $taxInfo['totalTaxableIncome'],
                 'payable_income_above_bar' => $taxInfo['payableIncomeAboveBar'],
                 'tax_on_payable_amount'    => $taxInfo['taxOnPayableAmount'],
@@ -79,6 +78,8 @@ class TaxCalculateController extends Controller
                 'final_income_tax'         => $taxInfo['finalIncomeTax'],
                 'response_data'            => json_encode($taxInfo),
             ]);
+
+            TaxInfo::create($request->all());
 
             return $this->successResponse('tax info', $taxInfo);
         }catch(\Exception $e) {
