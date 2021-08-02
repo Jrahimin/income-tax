@@ -120,7 +120,7 @@ const TaxForm = (props) => {
             </Modal>
             <div className="card">
                 <div className="card-header text-center bg-info font-weight-bold">Calculate Income TAX</div>
-                {errorMessage && <div style={{marginTop:'10px'}}>
+                {errorMessage && <div style={{margin:'10px'}}>
                     <Alert variant={'danger'} dismissible onClose={() => setErrorMessage(undefined)}>
                         {errorMessage}
                     </Alert>
