@@ -5648,11 +5648,12 @@ var TaxForm = function TaxForm(props) {
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(Group, {
                 controlId: "name",
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(Label, {
-                  children: "Name"
+                  children: "Name*"
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(Control, {
                   type: "text",
                   placeholder: "Enter full name",
                   name: "name",
+                  required: true,
                   onChange: handleTaxData
                 })]
               })

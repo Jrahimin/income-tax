@@ -112,6 +112,7 @@ const TaxForm = (props) => {
                     </Button>
                 </Modal.Footer>
             </Modal>
+
             <div className="card">
                 <div className="card-header text-center bg-info font-weight-bold">Calculate Income TAX</div>
                 <div className="card-body">
@@ -121,8 +122,8 @@ const TaxForm = (props) => {
                         <Row>
                             <Col>
                                 <Group controlId="name">
-                                    <Label>Name</Label>
-                                    <Control type="text" placeholder="Enter full name" name="name"
+                                    <Label>Name*</Label>
+                                    <Control type="text" placeholder="Enter full name" name="name" required
                                              onChange={handleTaxData}/>
                                 </Group>
                             </Col>
