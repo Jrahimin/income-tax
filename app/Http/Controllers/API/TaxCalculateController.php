@@ -33,9 +33,9 @@ class TaxCalculateController extends Controller
             $request['request_data'] = json_encode($request->all());
 
             // Taxable income Calculation
-            $houseRentTaxable = $this->getHouseRentTaxableAmount($request->year_house_rent);
-            $medicalTaxable = $this->getMedicalTaxableAmount($request->year_medical);
-            $transportTaxable = $this->getTransportTaxableAmount($request->year_transport, $request->attain_transport);
+            $houseRentTaxable = $this->getHouseRentTaxableAmount($request);
+            $medicalTaxable = $this->getMedicalTaxableAmount($request);
+            $transportTaxable = $this->getTransportTaxableAmount($request);
 
             $totalTaxableIncome = $request->year_basic + $request->year_bonus + $request->extra_income + $houseRentTaxable + $medicalTaxable + $transportTaxable;
 
@@ -88,40 +88,39 @@ class TaxCalculateController extends Controller
         }
     }
 
-    protected function getHouseRentTaxableAmount($houseRent)
+    protected function getHouseRentTaxableAmount(Request $request)
     {
+        $houseRent = $request->year_house_rent;
         if(!$houseRent)
             return 0;
 
-        $amount = $houseRent - min($houseRent*0.5, 300000);
+        $amount = $houseRent - min($request->year_basic*0.5, $houseRent,300000);
 
         Log::info("House rent taxable amount: {$amount}");
 
         return $amount;
     }
 
-    protected function getMedicalTaxableAmount($medicalCost)
+    protected function getMedicalTaxableAmount(Request $request)
     {
+        $medicalCost = $request->year_medical;
         if(!$medicalCost)
             return 0;
 
-        $amount = $medicalCost - min($medicalCost*0.1, 120000);
+        $amount = $medicalCost - min($request->year_basic*0.1, $medicalCost,120000);
 
         Log::info("Medical taxable amount: {$amount}");
 
         return $amount;
     }
 
-    protected function getTransportTaxableAmount($transportCost, $providedCar)
+    protected function getTransportTaxableAmount(Request $request)
     {
-        if(!$transportCost)
-            return 0;
-
-        if($providedCar) {
-            return max($transportCost*0.05, 60000);
+        if($request->attain_transport) {
+            return max($request->year_basic*0.05, 60000);
         }
 
-        $amount = $transportCost - 30000;
+        $amount = $request->year_transport - 30000;
 
         Log::info("Transport taxable amount: {$amount}");
 
