@@ -45,3 +45,5 @@ WORKDIR /var/www
 
 # Change current user to www
 USER www
+
+CMD run npm run dev

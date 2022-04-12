@@ -79,7 +79,7 @@ class TaxCalculateController extends Controller
                 'response_data'            => json_encode($taxInfo),
             ]);
 
-            TaxInfo::create($request->all());
+            //TaxInfo::create($request->all());
 
             return $this->successResponse('tax info', $taxInfo);
         }catch(\Exception $e) {
@@ -148,20 +148,22 @@ class TaxCalculateController extends Controller
         return $amount;
     }
 
-    protected function getTaxAmountOnPayableMoney($payableAmount, Request $request)
+    protected function getTaxAmountOnPayableMoneyOld($payableAmount, Request $request)
     {
+        // limit (0) + 1 (5%) + 3 (10%) + 4 (15%) + 5 (20%) + rest (25%)
+
         $taxAmount = 0;
         $taxCalculated = false;
         //upto 4lakh
         if($payableAmount <= 400000){
-            $taxAmount = $payableAmount*0.1;
+            $taxAmount = $payableAmount*0.05;
             Log::info("within 400000. Payable amount: {$payableAmount}. taxAmount: {$taxAmount}");
             $taxCalculated = true;
         }
 
         //for next 5lakh
         if(!$taxCalculated && $payableAmount <= 900000){
-            $taxAmount = 400000*0.1 + ($payableAmount - 400000)*0.15;
+            $taxAmount = 400000*0.1 + ($payableAmount - 400000)*0.10;
             Log::info("within 900000. Payable amount: {$payableAmount}. taxAmount: {$taxAmount}");
             $taxCalculated = true;
         }
@@ -184,6 +186,70 @@ class TaxCalculateController extends Controller
         if(!$taxCalculated){
             $taxAmount = 400000*0.1 + 500000*0.15 + 600000*0.2 + 3000000*0.25 + ($payableAmount - 4500000)*0.30;
             Log::info("Above all bar. Payable amount: {$payableAmount}. taxAmount: {$taxAmount}");
+        }
+
+        if($taxAmount > 5000){
+            return $taxAmount;
+        }
+
+        //minimum tax check
+        if(!$request->in_city){
+            if($request->ctg_or_dhaka){
+                return 5000;
+            }
+
+            return 4000;
+        }
+
+        return 3000;
+    }
+
+    protected function getTaxAmountOnPayableMoney($payableAmount, Request $request)
+    {
+        // limit (0) + 1 (5%) + 3 (10%) + 4 (15%) + 5 (20%) + rest (25%)
+
+        $taxCalculated = false;
+
+        if($payableAmount > 100000){
+            $taxAmount = 100000*0.05;
+            $payableAmount -= 100000;
+        } else{
+            $taxCalculated = true;
+            $taxAmount = $payableAmount*0.05;
+        }
+
+        if(!$taxCalculated){
+            if($payableAmount > 300000){
+                $taxAmount += 300000*0.1;
+                $payableAmount -= 300000;
+            } else{
+                $taxCalculated = true;
+                $taxAmount += $payableAmount*0.1;
+            }
+        }
+
+        if(!$taxCalculated){
+            if($payableAmount > 400000){
+                $taxAmount += 400000*0.15;
+                $payableAmount -= 400000;
+            } else{
+                $taxCalculated = true;
+                $taxAmount += $payableAmount*0.15;
+            }
+        }
+
+        if(!$taxCalculated){
+            if($payableAmount > 500000){
+                $taxAmount += 500000*0.20;
+                $payableAmount -= 500000;
+            } else{
+                $taxCalculated = true;
+                $taxAmount += $payableAmount*0.20;
+            }
+        }
+
+        if(!$taxCalculated){
+            $taxAmount += $payableAmount*0.25;
         }
 
         if($taxAmount > 5000){
